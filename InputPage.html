@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <p>
+            <label for="item">Your Name</label>
+            <input type="input" name="name" id="Name">
+        </p>
+       
+        <p>
+            <label for="item">Your Email</label>
+            <input type="Email" name="Email" id="Email">
+        </p>
+
+        <p>
+            <label for="item">Address</label>
+            <input type="text" name="Address" id="Address">
+        </p>
+
+        <p>
+            <label for="item">DOB</label>
+            <input type="date" name="date" id="date">
+        </p>
+
+        <p>
+            <button id="submit">Submit</button>
+        </p>
+
+    </form>
+    <div id='user'></div>
+
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+<script>
+$('#submit').click(function (event) {
+    event.preventDefault()
+    document.getElementById('name').value //regular vanilla way
+    $('#name').val()
+    $('#email').val()
+    $('#address').val()
+    $('#dob').val()
+
+    $('#user').html(`
+        <p>Name: ${$('#name').val()}</p>
+        <p>email: ${$('#email').val()}</p>
+        <p>Address: ${$('#address').val()}</p>
+        <p>Date of Birth: ${$('#dob').val()}</p>
+    `)
+
+    $('#name').val('')
+    $('#email').val('')
+    $('#address').val('')
+    $('#dob').val('')
+
+
+
+})
+
+
+</script>
+
+</html>
